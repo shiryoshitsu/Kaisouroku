@@ -3,13 +3,12 @@
   const $ = (selector) => document.querySelector(selector);
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const prettyDate = (date) => {
-   const prettyDate = (date) => {
+    const prettyDate = (date) => {
     if (!date) return "--";
-    // Splits "2026-10-25" safely by dashes instead of forcing a complex Date object conversion
-    const parts = date.split("-");
-    if (parts.length !== 3) return date;
-    return `${parts[0]}.${parts[1].padStart(2,"0")}.${parts[2].padStart(2,"0")}`;
+    // Safely changes "2026-10-25" into "2026.10.25"
+    return String(date).replace(/-/g, ".");
   };
+
 
     return Number.isNaN(d.getTime()) ? date : `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}`;
   };
