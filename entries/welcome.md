@@ -1,5 +1,3 @@
 # Welcome!
 
-Welcome to Kaisouroku! This is the first entry in my little archive.
-
-I made this website as a place to collect my thoughts about visual novels, music, and other things I enjoy.
+Welcome to my website! Here I talk about visual novels that interest me and share my honest opinions and thoughts on them! More entries coming soon in the future~
