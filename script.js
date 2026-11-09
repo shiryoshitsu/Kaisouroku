@@ -1,19 +1,13 @@
-// Kaisouroku entry loader. Entries are listed in entries.json.
 (async function () {
   const $ = (selector) => document.querySelector(selector);
-  const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"'"}[c]));
+  
   const prettyDate = (date) => {
-    const prettyDate = (date) => {
     if (!date) return "--";
-    // Safely changes "2026-10-25" into "2026.10.25"
     return String(date).replace(/-/g, ".");
   };
 
-
-    return Number.isNaN(d.getTime()) ? date : `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}`;
-  };
   function markdown(source) {
-    // Small, dependency-free Markdown renderer for posts you write yourself.
     const inline = (s) => esc(s)
       .replace(/`([^`]+)`/g, "<code>$1</code>")
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
@@ -32,20 +26,10 @@
     }
     flush();if(list)html+="</ul>";return html;
   }
+
   let entries=[];
   try {
-      let entries=[];
-  try {
-    // Dynamically builds the correct path whether you are on the homepage or an entry page
-    const repoPath = window.location.pathname.split('/').slice(0, 2).join('/');
-    const jsonUrl = `${window.location.origin}${repoPath}/entries.json`;
-
-    const response = await fetch(jsonUrl, { cache: "no-store" });
-    if(!response.ok) throw new Error("Could not load entries.json");
-    entries=await response.json();
-    entries.sort((a,b)=>b.date.localeCompare(a.date));
-  } catch(error) {
-
+    const response = await fetch("./entries.json", {cache:"no-store"});
     if(!response.ok) throw new Error("Could not load entries.json");
     entries=await response.json();
     entries.sort((a,b)=>b.date.localeCompare(a.date));
@@ -55,15 +39,21 @@
     if(target) target.innerHTML="<p>Entries could not be loaded. Please check that entries.json is in the website's main folder.</p>";
     return;
   }
+
   const last=entries[0]?.date;
   if($("#last-updated")) $("#last-updated").textContent="LAST UPDATED: "+(last?prettyDate(last):"--");
+  
   const card=(e)=>`<article class="diary-entry"><time datetime="${esc(e.date)}">${esc(prettyDate(e.date))}</time><p><a href="entry.html?id=${encodeURIComponent(e.slug)}">${esc(e.title)}</a> <span class="entry-category">[${esc(e.category)}]</span></p><p class="small-copy">${esc(e.summary||"")}</p></article>`;
+  
   if($("#latest-entries")) $("#latest-entries").innerHTML=entries.length?entries.slice(0,5).map(card).join(""):"<p>No entries yet.</p>";
+  
   if($("#archive-list")) {
     const groups={}; entries.forEach(e=>{const y=e.date.slice(0,4);(groups[y] ||= []).push(e);});
     $("#archive-list").innerHTML=Object.keys(groups).sort().reverse().map(year=>`<section class="content-box archive-year"><h2>${esc(year)}</h2>${groups[year].map(card).join("")}</section>`).join("") || "<p>No entries yet.</p>";
   }
+  
   if($("#updates-list")) $("#updates-list").innerHTML=entries.slice(0,3).map(e=>`<li><time>${esc(prettyDate(e.date))}</time>${esc(e.title)}</li>`).join("") || "<li>No updates yet.</li>";
+  
   const params=new URLSearchParams(location.search), slug=params.get("id");
   if(slug && $("#post-content")) {
     const entry=entries.find(e=>e.slug===slug);
