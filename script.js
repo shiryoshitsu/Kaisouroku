@@ -28,7 +28,7 @@
   }
   let entries=[];
   try {
-    const response=await fetch("entries.json", {cache:"no-store"});
+    const response=await fetch("./entries.json", {cache:"no-store"});
     if(!response.ok) throw new Error("Could not load entries.json");
     entries=await response.json();
     entries.sort((a,b)=>b.date.localeCompare(a.date));
