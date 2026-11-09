@@ -3,7 +3,14 @@
   const $ = (selector) => document.querySelector(selector);
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const prettyDate = (date) => {
-    const d = new Date(date + "T12:00:00");
+   const prettyDate = (date) => {
+    if (!date) return "--";
+    // Splits "2026-10-25" safely by dashes instead of forcing a complex Date object conversion
+    const parts = date.split("-");
+    if (parts.length !== 3) return date;
+    return `${parts[0]}.${parts[1].padStart(2,"0")}.${parts[2].padStart(2,"0")}`;
+  };
+
     return Number.isNaN(d.getTime()) ? date : `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}`;
   };
   function markdown(source) {
