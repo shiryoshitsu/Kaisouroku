@@ -8,11 +8,11 @@
     "file": "entries/welcome.md"
   },
   {
-    "slug": "introduction",
-    "title": "Introduction",
+    "slug": "About me",
+    "title": "About me!",
     "date": "2026-11-01",
     "category": "Diary",
     "summary": "introduction",
-    "file": "entries/introduction.md"
+    "file": "entries/About me.md"
   }
 ]
