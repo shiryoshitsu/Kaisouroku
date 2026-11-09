@@ -28,7 +28,18 @@
   }
   let entries=[];
   try {
-    const response=await fetch("./entries.json", {cache:"no-store"});
+      let entries=[];
+  try {
+    // Dynamically builds the correct path whether you are on the homepage or an entry page
+    const repoPath = window.location.pathname.split('/').slice(0, 2).join('/');
+    const jsonUrl = `${window.location.origin}${repoPath}/entries.json`;
+
+    const response = await fetch(jsonUrl, { cache: "no-store" });
+    if(!response.ok) throw new Error("Could not load entries.json");
+    entries=await response.json();
+    entries.sort((a,b)=>b.date.localeCompare(a.date));
+  } catch(error) {
+
     if(!response.ok) throw new Error("Could not load entries.json");
     entries=await response.json();
     entries.sort((a,b)=>b.date.localeCompare(a.date));
