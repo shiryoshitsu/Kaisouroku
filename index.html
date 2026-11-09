@@ -1,171 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="editeditedit">
+  <meta name="description" content="A personal archive of visual novels, music, and other interests.">
+  <meta name="robots" content="noindex, nofollow">
   <title>Kaisouroku</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="page-shell">
     <header class="site-header">
-      <div class="header-sparkle sparkle-one">✧</div>
-      <div class="header-sparkle sparkle-two">✦</div>
       <p class="eyebrow">KAISOUROKU</p>
       <h1>kaisouroku <span></span></h1>
-      <p class="tagline">"The days which are wrappd in the scene of the summer and to pass gently, 
-      An encounter with the girls repeated in the sunlight,
-      Summer continues to where as well,
-      She is waiting in the air."</p>
+      <p class="tagline">"The days which are wrapped in the scene of summer, passing gently..."</p>
       <div class="header-rule"><span>★</span><span>☆</span><span>★</span></div>
       <nav class="top-nav" aria-label="Main navigation">
-        <a href="#home">TOP</a>
-        <a href="#archive">ARCHIVE</a>
-        <a href="#music">MUSIC</a>
-        <a href="#diary">DIARY</a>
-        <a href="#links">LINKS</a>
+        <a href="index.html#home">TOP</a><a href="archive.html">ARCHIVE</a><a href="index.html#music">MUSIC</a><a href="index.html#diary">DIARY</a><a href="index.html#links">LINKS</a>
       </nav>
     </header>
-
     <div class="content-frame">
-      <div class="frame-heading">
-        <span>✧ "Even cats fall from poles" -Inohara Masato ✧</span>
-        <span class="updated">LAST UPDATED: 11.02.2026</span>
-      </div>
-
+      <div class="frame-heading"><span>✧ "Even cats fall from poles" - Inohara Masato ✧</span><span class="updated" id="last-updated">LAST UPDATED: --</span></div>
       <div class="columns">
         <aside class="sidebar left-sidebar">
           <section class="side-box profile-box">
             <h2><span>✿</span> PROFILE</h2>
-            <div class="https://kudtastic.nekoweb.org/5afa7a26f02a9341c91fde5a0724a11b.jpg">
-          
-              <img src="https://kudtastic.nekoweb.org/9f4eb8aab1240080acbbb5fd844af811(1).jpg" alt="pfp" onerror="this.style.display='none'">
-              <span class="image-placeholder"><br></span>
-            </div>
-            <p class="profile-name">₊˚⊹</p>
-            <p class="small-copy"> </p>
+            <div class="profile-image"><img src="https://kudtastic.nekoweb.org/9f4eb8aab1240080acbbb5fd844af811(1).jpg" alt="Profile picture" onerror="this.style.display='none'"><span class="image-placeholder">✧</span></div>
+            <p class="profile-name">₊˚⊹</p><p class="small-copy">A little corner of the internet.</p>
           </section>
-
-          <section class="side-box">
-            <h2><span>✿</span> CONTENTS</h2>
-            <ul class="side-links">
-              <li><a href="#home">★ Top page</a></li>
-              <li><a href="#archive">★ Visual novel archive</a></li>
-              <li><a href="#music">★ Music I like</a></li>
-              <li><a href="#diary">★ Diary</a></li>
-              <li><a href="#links">★ links</a></li>
-            </ul>
-          </section>
-
-          <section class="side-box currently">
-            <h2><span></span> Currently..</h2>
-            <p class="small-copy"><b>Playing:</b><br>Heaven Burns Red</p>
-            <p class="small-copy"><b>Listening to:</b><br>Key OSTS</p>
-            <p class="small-copy"><b>Reading:</b><br>Kara no shojo</p>
-          </section>
+          <section class="side-box"><h2><span>✿</span> CONTENTS</h2><ul class="side-links">
+            <li><a href="#home">★ Top page</a></li><li><a href="archive.html">★ All entries</a></li><li><a href="#music">★ Music I like</a></li><li><a href="#diary">★ Latest entries</a></li><li><a href="#links">★ Links</a></li>
+          </ul></section>
+          <section class="side-box currently"><h2>Currently..</h2><p class="small-copy"><b>Playing:</b><br>Heaven Burns Red</p><p class="small-copy"><b>Listening to:</b><br>Key OSTs</p><p class="small-copy"><b>Reading:</b><br>Kara no Shoujo</p></section>
         </aside>
-
         <main class="main-content">
-          <section class="welcome-panel" id="home">
-            <div class="section-title">
-              <span>✦</span><h2>Welcome!</h2><span>✦</span>
-            </div>
-            <div class="hero-image">
-        
-              <img src="https://kudtastic.nekoweb.org/hahahaadrfgt.PNG" alt="akane" onerror="this.style.display='none'">
-              <div class="hero-fallback">
-                <span></span>
-                <small>.✦ ݁˖</small>
-              </div>
-            </div>
-            <p class="intro">Thanks for visiting! I mainly talk about visual novels and share my honest opinions and thoughts on them. I also talk about other things such as my favourite visual novel soundtracks, animes and video games! </p>
-            <p class="Vn quote">  </p>
+          <section class="welcome-panel" id="home"><div class="section-title"><span>✦</span><h2>Welcome!</h2><span>✦</span></div>
+            <div class="hero-image"><img src="https://kudtastic.nekoweb.org/hahahaadrfgt.PNG" alt="Site illustration" onerror="this.style.display='none'"><div class="hero-fallback"><span>✧ Kaisouroku ✧</span><small>.✦ ݁˖</small></div></div>
+            <p class="intro">Thanks for visiting! I mainly talk about visual novels and share my honest opinions and thoughts on them. I also talk about favourite soundtracks, anime, and video games!</p>
           </section>
-
-          <section class="content-box" id="archive">
-            <div class="section-title compact">
-              <span>✧</span><h2>Visual Novel Archive</h2><span>✧</span>
-            </div>
-            <p class="box-intro"> Visual novels that changed my life</p>
+          <section class="content-box" id="archive"><div class="section-title compact"><span>✧</span><h2>Visual Novel Archive</h2><span>✧</span></div><p class="box-intro">Visual novels that changed my life</p>
             <div class="novel-grid">
-              <article class="novel-entry">
-                <div class="novel-thumb"><img src="https://kudtastic.nekoweb.org/716e5faf4bb199939f5a7680883bcd8f.jpg" alt="CLANNAD cover" onerror="this.style.display='none'"><span></span></div>
-                <h3>CLANNAD</h3><p>VISUAL ARTS/Key ・ 2004</p>
-              </article>
-              <article class="novel-entry">
-                <div class="novel-thumb"><img src="https://kudtastic.nekoweb.org/capsule_616x353.jpg" alt="Little Busters! cover" onerror="this.style.display='none'"><span></span></div>
-                <h3>Little Busters!</h3><p>VISUAL ARTS/Key ・ 2007</p>
-              </article>
-              <article class="novel-entry">
-                <div class="novel-thumb"><img src="https://kudtastic.nekoweb.org/air%20cover.jpg" alt="AIR cover" onerror="this.style.display='none'"><span></span></div>
-                <h3>AIR</h3><p>VISUAL ARTS/Key ・ 2000</p>
-              </article>
-            </div>
-            <p class="more-link"><a href="#archive">→ Visit the full archive</a></p>
+              <article class="novel-entry"><div class="novel-thumb"><img src="https://kudtastic.nekoweb.org/716e5faf4bb199939f5a7680883bcd8f.jpg" alt="CLANNAD cover" onerror="this.style.display='none'"></div><h3>CLANNAD</h3><p>VISUAL ARTS/Key ・ 2004</p></article>
+              <article class="novel-entry"><div class="novel-thumb"><img src="https://kudtastic.nekoweb.org/capsule_616x353.jpg" alt="Little Busters! cover" onerror="this.style.display='none'"></div><h3>Little Busters!</h3><p>VISUAL ARTS/Key ・ 2007</p></article>
+              <article class="novel-entry"><div class="novel-thumb"><img src="https://kudtastic.nekoweb.org/air%20cover.jpg" alt="AIR cover" onerror="this.style.display='none'"></div><h3>AIR</h3><p>VISUAL ARTS/Key ・ 2000</p></article>
+            </div><p class="more-link"><a href="archive.html">→ Visit the full archive</a></p>
           </section>
-
-          <section class="content-box" id="diary">
-            <div class="section-title compact">
-              <span>✧</span><h2>Site Archive</h2><span>✧</span>
-            </div>
-            <div class="diary-entry">
-              <time datetime="2026-11-01">2026.11.01</time>
-              <p>Introduction</p>
-            </div>
-            <div class="diary-entry">
-              <time datetime="2026-10-25">2026.10.25</time>
-              <p>Welcome!</p>
-            </div>
-          </section>
+          <section class="content-box" id="diary"><div class="section-title compact"><span>✧</span><h2>Latest Entries</h2><span>✧</span></div><div id="latest-entries" aria-live="polite"><p class="small-copy">Loading entries...</p></div><p class="more-link"><a href="archive.html">→ Browse the complete archive</a></p></section>
         </main>
-
         <aside class="sidebar right-sidebar">
-          <section class="side-box">
-            <h2><span>♪</span> Music I like</h2>
-            <p class="small-copy">Fav soundtracks</p>
-            <ul class="side-links">
-              <li><a href="#music">♪ Song for friends - VISUAL ARTS/Key </a></li>
-              <li><a href="#music">♪ Natukage - VISUAL ARTS/Key</a></li>
-              <li><a href="#music">♪ Little Busters! - VISUAL ARTS/Key</a></li>
-            </ul>
-          </section>
-
-          <section class="side-box" id="music">
-            <h2><span>✿</span> FAVOURITES</h2>
-            <div class="favourite-list">
-              <p><b>Visual novels</b><br>Little Busters! ・ AIR ・Rewrite</p>
-              <p><b>Other interests</b><br>Bullet hells ・doujins  ・anime!</p>
-            </div>
-          </section>
-
-          <section class="side-box">
-            <h2><span>✧</span> UPDATES</h2>
-            <ul class="updates">
-              <li><time>11.03.26</time> Mistakes fixed</li>
-              <li><time>10.25.26</time> start of work</li>
-            </ul>
-          </section>
-
-          <section class="side-box" id="links">
-            <h2><span>♡</span> OTHER LINKS</h2>
-            <p class="small-copy">Check out my personal blog!</p>
-            <div class="button88">
-              <a href="https://biglithuanianuke.blog.fc2.com/">Blog</a>
-            </div>
-          
-            
-          </section>
+          <section class="side-box"><h2><span>♪</span> Music I like</h2><p class="small-copy">Fav soundtracks</p><ul class="side-links"><li>♪ Song for friends - VISUAL ARTS/Key</li><li>♪ Natukage - VISUAL ARTS/Key</li><li>♪ Little Busters! - VISUAL ARTS/Key</li></ul></section>
+          <section class="side-box" id="music"><h2><span>✿</span> FAVOURITES</h2><div class="favourite-list"><p><b>Visual novels</b><br>Little Busters! ・ AIR ・ Rewrite</p><p><b>Other interests</b><br>Bullet hells ・ doujin games ・ anime!</p></div></section>
+          <section class="side-box"><h2><span>✧</span> UPDATES</h2><ul class="updates" id="updates-list"><li>Loading...</li></ul></section>
+          <section class="side-box" id="links"><h2><span>♡</span> OTHER LINKS</h2><p class="small-copy">Check out my personal blog!</p><div class="button88"><a href="https://biglithuanianuke.blog.fc2.com/">Blog</a></div></section>
         </aside>
       </div>
-
-      <footer class="site-footer">
-        <div class="footer-stars">★　☆　★　☆　★　☆　★</div>
-        <p>Thank you for visiting my homepage!</p>
-        <p class="footer-links"><a href="#home">TOP</a> ｜ <a href="#links">LINKS</a> ｜ <a href="mailto:hello@example.com">CONTACT</a></p>
-        <small>© KAISOUROKU</small>
-      </footer>
+      <footer class="site-footer"><div class="footer-stars">★　☆　★　☆　★　☆　★</div><p>Thank you for visiting my homepage!</p><p class="footer-links"><a href="index.html">TOP</a> ｜ <a href="archive.html">ARCHIVE</a> ｜ <a href="#links">LINKS</a></p><small>© KAISOUROKU</small></footer>
     </div>
   </div>
 </body>
