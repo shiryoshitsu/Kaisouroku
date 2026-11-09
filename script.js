@@ -10,7 +10,7 @@
   function markdown(source) {
     const inline = (s) => esc(s)
       .replace(/`([^`]+)`/g, "<code>$1</code>")
-      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*\*([^*]+)\*\"/g, "<strong>$1</strong>")
       .replace(/\*([^*]+)\*/g, "<em>$1</em>")
       .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" rel="noopener noreferrer">$1</a>');
     const lines = source.replace(/\r/g, "").split("\n");
@@ -59,7 +59,13 @@
     const entry=entries.find(e=>e.slug===slug);
     if(!entry){$("#post-title").textContent="Entry not found";$("#post-content").innerHTML='<p>This entry may have been moved or removed.</p>';return;}
     $("#post-title").textContent=entry.title;$("#post-date").textContent=prettyDate(entry.date);$("#post-category").textContent=entry.category;document.title=entry.title+" | Kaisouroku";
-    try {const r=await fetch(entry.file,{cache:"no-store"});if(!r.ok)throw new Error("Missing post file");$("#post-content").innerHTML=markdown(await r.text());}
-    catch(err){console.error(err);$("#post-content").innerHTML="<p>Couldn't load this entry. Check the file path in entries.json.</p>";}
+    try {
+      const r=await fetch(entry.file,{cache:"no-store"});
+      if(!r.ok)throw new Error("Missing post file");
+      $("#post-content").innerHTML=markdown(await r.text());
+    } catch(err){
+      console.error(err);
+      $("#post-content").innerHTML="<p>Couldn't load this entry. Check the file path in entries.json.</p>";
+    }
   }
 })();
